@@ -7,7 +7,6 @@ import java.util.Arrays;
 public class Collection {
 
     int[] arrayList;    // arraylist
-    int current;        // last position in the array
 
     public Collection() {
         // init the arraylist
