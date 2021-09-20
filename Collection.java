@@ -1,5 +1,5 @@
 // @author Cyrus Majd
-// @author PARTNER
+// @author Nikodem Kisielewski
 
 import java.util.Scanner;
 import java.util.Arrays;
