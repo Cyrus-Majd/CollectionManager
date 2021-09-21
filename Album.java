@@ -12,8 +12,24 @@ public class Album {
 	private Date releaseDate;
 	private boolean isAvailable;
 	
+	/** Constructor. Must have values for each value of the class. isAvailable is set to true by default.
+	 * 
+	 * @param title the album's title
+	 * @param artist the album artist
+	 * @param genre Genre enum. The album's genre
+	 * @param date Date object. The album's release date
+	 */
+	public Album(String title, String artist, Genre genre, Date releaseDate) {
+		this.title = title;
+		this.artist = artist;
+		this.genre = genre;
+		this.releaseDate = releaseDate;
+		isAvailable = true;
+	}
+	
 	/** Returns true or false depending on whether or not two albums have the same artist and title.
 	 * @param Album an Album object.
+	 * @return True if the two albums have the same title and artist; False otherwise.
 	 */
 	@Override
 	public boolean equals(Object obj) {
