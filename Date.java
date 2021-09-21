@@ -19,6 +19,27 @@ public class Date implements Comparable<Date> {
 	private static final int QUARTERCENNIAL = 400;
 	private static final int THE_EIGHTIES = 1980;
 	
+	/** Method to check if the given year is a leap year.
+	 * 
+	 * @param year The integer representation of a year
+	 * @return True if the year is a leap year; False otherwise.
+	 */
+	private boolean isLeapYear(int year) {
+		if (year % QUADRENNIAL == 0) {
+			if (year % CENTENNIAL == 0) {
+				if (year % QUARTERCENNIAL == 0) {
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				return true;
+			}
+		} else {
+			return false;
+		}
+	}
+	
 	/** Default constructor. Creates a Date instance with today's date as the parameters.*/
 	public Date() {
 		// Create a calendar instance to get date parameters
@@ -65,7 +86,7 @@ public class Date implements Comparable<Date> {
 			return false;
 		}
 		
-		// Check if the day is at least 1 and no greater than 
+		// Check if the day is at least 1 and no greater than 31
 		if (day < 1 || day > 31) {
 			return false;
 		}
@@ -77,39 +98,25 @@ public class Date implements Comparable<Date> {
 		
 		// If it is February, check for leap year validity
 		if (month == Calendar.FEBRUARY + 1) {
-			// Check if it is a leap year
-			boolean isLeapYear;
-			if (year % QUADRENNIAL == 0) {
-				if (year % CENTENNIAL == 0) {
-					if (year % QUARTERCENNIAL == 0) {
-						isLeapYear = true;
-					} else {
-						isLeapYear = false;
-					}
-				} else {
-					isLeapYear = true;
-				}
-			} else {
-				isLeapYear = false;
-			}
-			// If it is not a leap year and the date is Feb 29, the date is invalid
-			if (!isLeapYear && day == 29) {
+			// If it is not a leap year and the day is 29, the date is invalid
+			if (!isLeapYear(year) && day == 29) {
 				return false;
 			}
 		}
 		
 		// Check to see if the other month and day combinations are valid
+		// April, June, September, and November only have 30 days
 		if (day > 30 && (month == Calendar.APRIL + 1 || month == Calendar.JUNE + 1 || month == Calendar.SEPTEMBER + 1 || month == Calendar.NOVEMBER + 1)) {
 			return false;
 		}
 		
-		// Return true if the date passes all of the checks
+		// Return true if the date passes all of the validity checks
 		return true;
 	}
 	
 	/** Overrides the compareTo method and compares 2 dates.
 	 * @param date an instance of Date.
-	 * @return 0, 1, or 2. If this Date is more recent, returns 0. If the input Date is more recent, return
+	 * @return 0, 1, or 2. If this Date is more recent, returns 0; If the input Date is more recent, return 1; If the dates are equivalent, return 2
 	 */
 	@Override
 	public int compareTo(Date date) {
@@ -141,28 +148,28 @@ public class Date implements Comparable<Date> {
 	}
 	
 	/** Overrides the toString method and returns the Date instance as a string.
-	 * @return The Date instance as a string in the form "mm/dd/yyyy"
+	 * @return String representation of the Date instance in the form "mm/dd/yyyy"
 	 */
 	@Override
 	public String toString() {
 		return Integer.toString(month) + "/" + Integer.toString(day) + "/" + Integer.toString(year);
 	}
 	
-	/** Returns the day of a Date instance.
+	/** Returns the day of the Date instance.
 	 * @return The integer representation the release day.
 	 */
 	public int getDay() {
 		return day;
 	}
 	
-	/** Returns the month of a date instance.
+	/** Returns the month of the Date instance.
 	 * @return The integer representation of the release month.
 	 */
 	public int getMonth() {
 		return month;
 	}
 	
-	/** Returns the year of a date instance.
+	/** Returns the year of the Date instance.
 	 * @return The integer representation of the release year.
 	 */
 	public int getYear() {
