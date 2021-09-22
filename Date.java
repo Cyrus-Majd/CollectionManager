@@ -116,34 +116,33 @@ public class Date implements Comparable<Date> {
 	
 	/** Overrides the compareTo method and compares 2 dates.
 	 * @param date an instance of Date.
-	 * @return 0, 1, or 2. If this Date is more recent, returns 0; If the input Date is more recent, return 1; If the dates are equivalent, return 2
+	 * @return -1, 0, or 1. If this Date is more recent, returns -1; If the Date argument is more recent, return 1; If the dates are equivalent, return 0
 	 */
 	@Override
 	public int compareTo(Date date) {
 		// Check if this date's year is more recent
 		if (this.year > date.year) {
-			return 0;
+			return -1;
 		}
 		// Check if the years are equal
 		if (this.year == date.year) {
 			// Check if this date's month is more recent
 			if (this. month > date.month) {
-				return 0;
+				return -1;
 			}
 			// Check if the months are equal
 			if (this.month == date.month) {
 				// Check if this date's day is more recent
 				if (this.day > date.day) {
-					return 0;
+					return -1;
 				}
 				// The dates are the exact same
 				if (this.day == date.day) {
-					return 2;
+					return 0;
 				}
-				return 1;
 			}
-			return 1;
 		}
+		// This date object is more recent
 		return 1;
 	}
 	
