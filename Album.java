@@ -1,3 +1,5 @@
+package albums;
+
 /** 
  * This class defines the Album data type.
  * 
@@ -18,6 +20,7 @@ public class Album {
 	 * @param artist the album artist
 	 * @param genre Genre enum. The album's genre
 	 * @param date Date object. The album's release date
+	 * 
 	 */
 	public Album(String title, String artist, Genre genre, Date releaseDate) {
 		this.title = title;
@@ -28,8 +31,10 @@ public class Album {
 	}
 	
 	/** Returns true or false depending on whether or not two albums have the same artist and title.
+	 * 
 	 * @param Album an Album object.
 	 * @return True if the two albums have the same title and artist; False otherwise.
+	 * 
 	 */
 	@Override
 	public boolean equals(Object obj) {
@@ -46,7 +51,9 @@ public class Album {
 	}
 	
 	/** Returns the Album instance as a string.
-	 * @return The Album instance in the form "title::artist::genre::releaseDate::is available/is not available"
+	 * 
+	 * @return The Album instance in the form "title::artist::genre::releaseDate::is (not) available"
+	 * 
 	 */
 	@Override
 	public String toString() {
