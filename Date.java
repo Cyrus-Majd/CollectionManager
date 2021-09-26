@@ -1,5 +1,3 @@
-package albums;
-
 import java.util.Calendar;
 import java.util.StringTokenizer;
 
