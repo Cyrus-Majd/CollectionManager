@@ -1,5 +1,3 @@
-package albums;
-
 /** 
  * This class defines the Album data type.
  * 
