@@ -202,8 +202,4 @@ public class CollectionManager {
 		// Close the scanner
 		input.close();
 	}
-	
-	public static void main(String args[]) {
-		new CollectionManager().run();
-	}
 }
