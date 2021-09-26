@@ -1,3 +1,5 @@
+package albums;
+
 import java.util.Calendar;
 import java.util.StringTokenizer;
 
@@ -18,11 +20,17 @@ public class Date implements Comparable<Date> {
 	private static final int CENTENNIAL = 100;
 	private static final int QUARTERCENNIAL = 400;
 	private static final int THE_EIGHTIES = 1980;
+	private static final int NORMAL_MONTH = 31;			// Maximum amount of days in a normal month
+	private static final int SHORT_MONTH = 30;			// Maximum amount of days in April, June, September, and November
+	private static final int FEB_LEAP_YEAR = 29;		// Maximum amount of days in February in a leap year
+	private static final int DATE_LOWER_BOUND = 1;		// Minimum amount of days in a month and months
+	private static final int MONTH_UPPER_BOUND = 12;	// Maximum amount months
 	
 	/** Method to check if the given year is a leap year.
 	 * 
 	 * @param year The integer representation of a year
 	 * @return True if the year is a leap year; False otherwise.
+	 * 
 	 */
 	private boolean isLeapYear(int year) {
 		if (year % QUADRENNIAL == 0) {
@@ -52,7 +60,9 @@ public class Date implements Comparable<Date> {
 	}
 	
 	/** Takes in a date string and creates an instance of Date.
-	 * @param date a date string in the form "mm/dd/yyyy".
+	 * 
+	 * @param date The string representation of a date in the form "mm/dd/yyyy".
+	 * 
 	 */
 	public Date(String date) {
 		// Constructs a StringTokenizer to individually set the Date parameters
@@ -70,7 +80,9 @@ public class Date implements Comparable<Date> {
 	 * can exceed 31, if the month is April, June, September, or November,
 	 * the day cannot exceed 30. February can only have a day value
 	 * of 29 if it is a leap year.
+	 * 
 	 * @return True or False depending on whether the date is considered valid.
+	 * 
 	 */
 	public boolean isValid() {
 		// Create a calendar instance to get today's date parameters
@@ -81,13 +93,13 @@ public class Date implements Comparable<Date> {
 			return false;
 		}
 		
-		// Check if the month is valid
-		if (month < 1 || month > 12) {
+		// Check if the month is valid (a month cannot be less than 1 or greater than 12)
+		if (month < DATE_LOWER_BOUND || month > MONTH_UPPER_BOUND) {
 			return false;
 		}
 		
 		// Check if the day is at least 1 and no greater than 31
-		if (day < 1 || day > 31) {
+		if (day < DATE_LOWER_BOUND || day > NORMAL_MONTH) {
 			return false;
 		}
 		
@@ -99,14 +111,14 @@ public class Date implements Comparable<Date> {
 		// If it is February, check for leap year validity
 		if (month == Calendar.FEBRUARY + 1) {
 			// If it is not a leap year and the day is 29, the date is invalid
-			if (!isLeapYear(year) && day == 29) {
+			if (!isLeapYear(year) && day == FEB_LEAP_YEAR) {
 				return false;
 			}
 		}
 		
 		// Check to see if the other month and day combinations are valid
 		// April, June, September, and November only have 30 days
-		if (day > 30 && (month == Calendar.APRIL + 1 || month == Calendar.JUNE + 1 || month == Calendar.SEPTEMBER + 1 || month == Calendar.NOVEMBER + 1)) {
+		if (day > SHORT_MONTH && (month == Calendar.APRIL + 1 || month == Calendar.JUNE + 1 || month == Calendar.SEPTEMBER + 1 || month == Calendar.NOVEMBER + 1)) {
 			return false;
 		}
 		
@@ -115,8 +127,10 @@ public class Date implements Comparable<Date> {
 	}
 	
 	/** Overrides the compareTo method and compares 2 dates.
+	 * 
 	 * @param date an instance of Date.
 	 * @return -1, 0, or 1. If this Date is more recent, returns -1; If the Date argument is more recent, return 1; If the dates are equivalent, return 0
+	 * 
 	 */
 	@Override
 	public int compareTo(Date date) {
@@ -147,7 +161,9 @@ public class Date implements Comparable<Date> {
 	}
 	
 	/** Overrides the toString method and returns the Date instance as a string.
+	 * 
 	 * @return String representation of the Date instance in the form "mm/dd/yyyy"
+	 * 
 	 */
 	@Override
 	public String toString() {
@@ -155,21 +171,27 @@ public class Date implements Comparable<Date> {
 	}
 	
 	/** Returns the day of the Date instance.
+	 * 
 	 * @return The integer representation the release day.
+	 * 
 	 */
 	public int getDay() {
 		return day;
 	}
 	
 	/** Returns the month of the Date instance.
+	 * 
 	 * @return The integer representation of the release month.
+	 * 
 	 */
 	public int getMonth() {
 		return month;
 	}
 	
 	/** Returns the year of the Date instance.
+	 * 
 	 * @return The integer representation of the release year.
+	 * 
 	 */
 	public int getYear() {
 		return year;
