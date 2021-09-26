@@ -1,5 +1,3 @@
-package albums;
-
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
