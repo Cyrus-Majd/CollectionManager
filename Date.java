@@ -209,8 +209,46 @@ public class Date implements Comparable<Date> {
 		return year;
 	}
 	
+	/** Testbed main. Used to test the isValid method. More information in the test doc.*/
 	public static void main(String args[]) {
-		Date date = new Date("10/29/2020");
-		System.out.println(date.compareTo(new Date()));
+		// Test case 1: Date cannot be before the year 1980.
+		Date test1 = new Date("12/31/1979");
+		System.out.println("Test case 1 (should be false): " + test1.isValid());
+		
+		// Test case 2: Date can be after the year 1980.
+		Date test2 = new Date("1/1/1980");
+		System.out.println("Test case 2 (should be true): " + test2.isValid());
+		
+		// Test case 3: Day value in any given month cannot exceed 31.
+		Date test3 = new Date("1/32/1980");
+		System.out.println("Test case 3 (should be false): " + test3.isValid());
+		
+		// Test case 4: Days value in any given month must be at least 1.
+		Date test4 = new Date("1/0/1980");
+		System.out.println("Test case 4 (should be false): " + test4.isValid());
+		
+		// Test case 5: Month value must be at least 1.
+		Date test5 = new Date("0/15/1980");
+		System.out.println("Test case 5 (should be false): " + test5.isValid());
+		
+		// Test case 6: Month value cannot exceed 12.
+		Date test6 = new Date("13/15/1980");
+		System.out.println("Test case 6 (should be false): " + test6.isValid());
+		
+		// Test case 7: Date cannot exceed today's date.
+		Date test7 = new Date("10/15/2100");
+		System.out.println("Test case 7 (should be false): " + test7.isValid());
+		
+		// Test case 8: The day value cannot exceed 28 if it is not a leap year.
+		Date test8 = new Date("2/29/2021");
+		System.out.println("Test case 8 (should be false): " + test8.isValid());
+		
+		// Test case 9: The day value cannot exceed 30 if it is April, June, September, or November.
+		Date test9 = new Date("11/31/2020");
+		System.out.println("Test case 9 (should be false): " + test9.isValid());
+		
+		// Test case 10: The date can be today's date.
+		Date test10 = new Date();
+		System.out.println("Test case 10 (should be true): " + test10.isValid());
 	}
 }
