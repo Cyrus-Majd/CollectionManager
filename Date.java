@@ -14,14 +14,14 @@ public class Date implements Comparable<Date> {
 	private int year;
 	
 	// Numbers used for calculating date validity
-	private static final int QUADRENNIAL = 4;
-	private static final int CENTENNIAL = 100;
-	private static final int QUARTERCENNIAL = 400;
+	private static final int QUADRENNIAL = 4;			// Used for calculating leap year
+	private static final int CENTENNIAL = 100;			// Used for calculating leap year
+	private static final int QUARTERCENNIAL = 400;		// Used for calculating leap year
 	private static final int THE_EIGHTIES = 1980;
 	private static final int NORMAL_MONTH = 31;			// Maximum amount of days in a normal month
 	private static final int SHORT_MONTH = 30;			// Maximum amount of days in April, June, September, and November
 	private static final int FEB_LEAP_YEAR = 29;		// Maximum amount of days in February in a leap year
-	private static final int DATE_LOWER_BOUND = 1;		// Minimum amount of days in a month and months
+	private static final int DATE_LOWER_BOUND = 1;		// Minimum amount of days in any given month and minimum month
 	private static final int MONTH_UPPER_BOUND = 12;	// Maximum amount months
 	
 	/** Method to check if the given year is a leap year.
@@ -195,5 +195,10 @@ public class Date implements Comparable<Date> {
 	 */
 	public int getYear() {
 		return year;
+	}
+	
+	public static void main(String args[]) {
+		Date date = new Date("10/29/2020");
+		System.out.println(date.compareTo(new Date()));
 	}
 }
