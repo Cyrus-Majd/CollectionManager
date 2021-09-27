@@ -34,13 +34,13 @@ public class CollectionManager {
 		// Switch statement to determine the command
 		switch (command.nextToken()) {
 		case "P":
-			//collection.print();
+			collection.print();
 			break;
 		case "PD":
-			//collection.printByReleaseDate();
+			collection.printByReleaseDate();
 			break;
 		case "PG":
-			//collection.printByGenre();
+			collection.printByGenre();
 			break;
 		case "A":
 			if (numArgs == ADD_ARGS) {
