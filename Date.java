@@ -9,20 +9,32 @@ import java.util.StringTokenizer;
  * 
  */
 public class Date implements Comparable<Date> {
+	/** Integer representation of the day.*/
 	private int day;
+	/** Integer representation of the month.*/
 	private int month;
+	/** Integer representation of the year.*/
 	private int year;
 	
 	// Numbers used for calculating date validity
-	private static final int QUADRENNIAL = 4;			// Used for calculating leap year
-	private static final int CENTENNIAL = 100;			// Used for calculating leap year
-	private static final int QUARTERCENNIAL = 400;		// Used for calculating leap year
+	/** Used for calculating leap year.*/
+	private static final int QUADRENNIAL = 4;
+	/** Used for calculating leap year.*/
+	private static final int CENTENNIAL = 100;
+	/** Used for calculating leap year.*/
+	private static final int QUARTERCENNIAL = 400;
+	/** Integer representation of the year 1980. Used when checking date validity.*/
 	private static final int THE_EIGHTIES = 1980;
-	private static final int NORMAL_MONTH = 31;			// Maximum amount of days in a normal month
-	private static final int SHORT_MONTH = 30;			// Maximum amount of days in April, June, September, and November
-	private static final int FEB_LEAP_YEAR = 29;		// Maximum amount of days in February in a leap year
-	private static final int DATE_LOWER_BOUND = 1;		// Minimum amount of days in any given month and minimum month
-	private static final int MONTH_UPPER_BOUND = 12;	// Maximum amount months
+	/** Maximum amount of days in a normal month. Used when checking date validity.*/
+	private static final int NORMAL_MONTH = 31;
+	/** Maximum amount of days in April, June, September, and November. Used when checking date validity.*/
+	private static final int SHORT_MONTH = 30;
+	/** Maximum amount of days in February in a leap year. Used when checking date validity.*/
+	private static final int FEB_LEAP_YEAR = 29;
+	/** Minimum amount of days in any given month; Minimum month value. Used when checking date validity.*/
+	private static final int DATE_LOWER_BOUND = 1;
+	/** Maximum month value. Used when checking date validity.*/
+	private static final int MONTH_UPPER_BOUND = 12;
 	
 	/** Method to check if the given year is a leap year.
 	 * 
