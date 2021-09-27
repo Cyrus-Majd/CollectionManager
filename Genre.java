@@ -5,9 +5,14 @@
  * 
  */
 public enum Genre {
+	/** Pop genre.*/
 	POP,
+	/** Country genre.*/
 	COUNTRY,
+	/** Classical genre.*/
 	CLASSICAL,
+	/** Jazz genre.*/
 	JAZZ,
+	/** Other/unknown genre.*/
 	UNKNOWN;
 }
