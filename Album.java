@@ -6,10 +6,15 @@
  * 
  */
 public class Album {
+	/** The album's title.*/
 	private String title;
+	/** The album's artist.*/
 	private String artist;
+	/** The album's genre.*/
 	private Genre genre;	// enum: POP, COUNTRY, CLASSICAL, JAZZ, UNKNOWN
+	/** The album's release date.*/
 	private Date releaseDate;
+	/** Boolean stating whether or not the album is lended out.*/
 	private boolean isAvailable;
 	
 	/** Constructor. Must have values for each value of the class. isAvailable is set to true by default.
@@ -17,7 +22,7 @@ public class Album {
 	 * @param title the album's title
 	 * @param artist the album artist
 	 * @param genre Genre enum. The album's genre
-	 * @param date Date object. The album's release date
+	 * @param releaseDate Date object. The album's release date
 	 * 
 	 */
 	public Album(String title, String artist, Genre genre, Date releaseDate) {
@@ -30,7 +35,7 @@ public class Album {
 	
 	/** Returns true or false depending on whether or not two albums have the same artist and title.
 	 * 
-	 * @param Album an Album object.
+	 * @param obj an Album object.
 	 * @return True if the two albums have the same title and artist; False otherwise.
 	 * 
 	 */
