@@ -87,4 +87,12 @@ public class Album {
 		// Construct and return the full album string
 		return title + "::" + artist + "::" + genreString + "::" + releaseDate.toString() + "::" + availableString;
 	}
+	/** Changes the availability of an album to the specified availability (True or False).
+	 * 
+	 * @param availability True or False depending on whether or not the album is available
+	 * 
+	 * */
+	public void setAvailability(boolean availability) {
+		isAvailable = availability;
+	}
 }
