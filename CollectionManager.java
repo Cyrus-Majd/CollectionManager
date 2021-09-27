@@ -121,8 +121,14 @@ public class CollectionManager {
 		// Create the new album object
 		Album newAlbum = new Album(title, artist, genre, releaseDate);
 		
-		// Adding the album
-		collection.add(newAlbum);
+		// Adding the album and checking if the addition was successful
+		boolean success = collection.add(newAlbum);
+		
+		if (success) {
+			System.out.println(newAlbum.toString() + " has been added successfully.");
+		} else {
+			System.out.println(newAlbum.toString() + " is already in the collection.");
+		}
 	}
 	
 	/** Performs the remove album command.
@@ -137,11 +143,17 @@ public class CollectionManager {
 		Genre genre = Genre.UNKNOWN;		// Genre does not matter since we do not need it to delete the album
 		Date releaseDate = new Date();		// Date is also unimportant
 		
-		// Create the new album object
+		// Create the album object that is to be removed
 		Album removeAlbum = new Album(title, artist, genre, releaseDate);
 		
-		// Adding the album
-		collection.remove(removeAlbum);
+		// Removing the album and checking if it was successful
+		boolean success = collection.remove(removeAlbum);
+		
+		if (success) {
+			System.out.println(removeAlbum.toString() + " has been removed successfully.");
+		} else {
+			System.out.println(removeAlbum.toString() + " is not in the collection.");
+		}
 	}
 	
 	/** Performs the lend album command.
@@ -156,10 +168,17 @@ public class CollectionManager {
 		Genre genre = Genre.UNKNOWN;		// Genre does not matter since we do not need it to delete the album
 		Date releaseDate = new Date();		// Date is also unimportant
 		
-		// Create the new album object
+		// Create the album object to be lended
 		Album lendAlbum = new Album(title, artist, genre, releaseDate);
 		
-		collection.lendingOut(lendAlbum);
+		// Lending out the album and checking if it was successful
+		boolean success = collection.lendingOut(lendAlbum);
+		
+		if (success) {
+			System.out.println(lendAlbum.toString() + " has been lended out successfully.");
+		} else {
+			System.out.println(lendAlbum.toString() + " could not be lended out.");
+		}
 	}
 	
 	/** Performs the return album command.
@@ -174,10 +193,17 @@ public class CollectionManager {
 		Genre genre = Genre.UNKNOWN;		// Genre does not matter since we do not need it to delete the album
 		Date releaseDate = new Date();		// Date is also unimportant
 		
-		// Create the new album object
+		// Create the album object to be returned
 		Album returnAlbum = new Album(title, artist, genre, releaseDate);
 		
-		collection.returnAlbum(returnAlbum);
+		// Returning the album and checking if it was successful
+		boolean success = collection.returnAlbum(returnAlbum);
+		
+		if (success) {
+			System.out.println(returnAlbum.toString() + " has been returned successfully.");
+		} else {
+			System.out.println(returnAlbum.toString() + " could not be returned.");
+		}
 	}
 	
 	/** Run method. Loop that reads user input and executes commands. Commands must be in proper format.
