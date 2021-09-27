@@ -8,10 +8,15 @@ import java.util.StringTokenizer;
  *
  */
 public class CollectionManager {
-	private boolean active;						// Boolean to detect when user wishes to exit the program
-	private Collection collection;				// The album collection
-	private static final int ADD_ARGS = 5;		// Correct number of arguments to add an album to the collection
-	private static final int OTHER_ARGS = 3;	// Correct number of arguments for all other commands
+	/** Boolean to detect when user wishes to exit the program.*/
+	private boolean active;
+	/** The album collection.*/
+	private Collection collection;
+	
+	/** The correct number of arguments to add an album to a collection. Used for checking command validity.*/
+	private static final int ADD_ARGS = 5;
+	/** Correct number of arguments for all other commands. Used for checking command validity.*/
+	private static final int OTHER_ARGS = 3;
 	
 	/** Default constructor.*/
 	public CollectionManager() {
@@ -43,6 +48,7 @@ public class CollectionManager {
 			collection.printByGenre();
 			break;
 		case "A":
+			// Checking if the user has the correct amount of arguments for the given command
 			if (numArgs == ADD_ARGS) {
 				addCommand(command);
 			} else {
@@ -50,6 +56,7 @@ public class CollectionManager {
 			}
 			break;
 		case "D":
+			// Checking if the user has the correct amount of arguments for the given command
 			if (numArgs == OTHER_ARGS) {
 				removeCommand(command);
 			} else {
@@ -57,6 +64,7 @@ public class CollectionManager {
 			}
 			break;
 		case "L":
+			// Checking if the user has the correct amount of arguments for the given command
 			if (numArgs == OTHER_ARGS) {
 				lendCommand(command);
 			} else {
@@ -64,6 +72,7 @@ public class CollectionManager {
 			}
 			break;
 		case "R":
+			// Checking if the user has the correct amount of arguments for the given command
 			if (numArgs == OTHER_ARGS) {
 				returnCommand(command);
 			} else {
@@ -118,14 +127,15 @@ public class CollectionManager {
 	
 	/** Performs the remove album command.
 	 * 
-	 * @param command command StringTokenizer containing the remove album parameters
+	 * @param command StringTokenizer containing the remove album parameters
+	 * 
 	 */
 	private void removeCommand(StringTokenizer command) {
 		// Setting the parameters of the album
 		String title = command.nextToken();
 		String artist = command.nextToken();
-		Genre genre = Genre.UNKNOWN;			// Genre does not matter since we do not need it to delete the album
-		Date releaseDate = new Date();			// Date is also unimportant
+		Genre genre = Genre.UNKNOWN;		// Genre does not matter since we do not need it to delete the album
+		Date releaseDate = new Date();		// Date is also unimportant
 		
 		// Create the new album object
 		Album removeAlbum = new Album(title, artist, genre, releaseDate);
@@ -136,14 +146,15 @@ public class CollectionManager {
 	
 	/** Performs the lend album command.
 	 * 
-	 * @param command command StringTokenizer containing the lend album parameters
+	 * @param command StringTokenizer containing the lend album parameters
+	 * 
 	 */
 	private void lendCommand(StringTokenizer command) {
 		// Setting the parameters of the album
 		String title = command.nextToken();
 		String artist = command.nextToken();
-		Genre genre = Genre.UNKNOWN;			// Genre does not matter since we do not need it to delete the album
-		Date releaseDate = new Date();			// Date is also unimportant
+		Genre genre = Genre.UNKNOWN;		// Genre does not matter since we do not need it to delete the album
+		Date releaseDate = new Date();		// Date is also unimportant
 		
 		// Create the new album object
 		Album lendAlbum = new Album(title, artist, genre, releaseDate);
@@ -153,14 +164,15 @@ public class CollectionManager {
 	
 	/** Performs the return album command.
 	 * 
-	 * @param command command StringTokenizer containing the return album parameters
+	 * @param command StringTokenizer containing the return album parameters
+	 * 
 	 */
 	private void returnCommand(StringTokenizer command) {
 		// Setting the parameters of the album
 		String title = command.nextToken();
 		String artist = command.nextToken();
-		Genre genre = Genre.UNKNOWN;			// Genre does not matter since we do not need it to delete the album
-		Date releaseDate = new Date();			// Date is also unimportant
+		Genre genre = Genre.UNKNOWN;		// Genre does not matter since we do not need it to delete the album
+		Date releaseDate = new Date();		// Date is also unimportant
 		
 		// Create the new album object
 		Album returnAlbum = new Album(title, artist, genre, releaseDate);
@@ -174,10 +186,10 @@ public class CollectionManager {
 	 * 		P = display the entire collection without a specific order
 	 * 		PD = display the entire collection sorted by release date
 	 * 		PG = display the entire collection sorted by genre
-	 * 		A = add an album to the collection -> must be in the form "A, Album Title, Album Artist, Genre, Release Date"
-	 * 		D = remove an album from the collection -> must be in the form "D, Album Title, Album Artist"
-	 * 		L = lend out an album to a friend -> must be in the form "L, Album Title, Album Artist"
-	 * 		R = return an album that was lended out -> must be in the form "R, Album Title, Album Artist"
+	 * 		A = add an album to the collection; must be in the form "A, Album Title, Album Artist, Genre, Release Date"
+	 * 		D = remove an album from the collection; must be in the form "D, Album Title, Album Artist"
+	 * 		L = lend out an album to a friend; must be in the form "L, Album Title, Album Artist"
+	 * 		R = return an album that was lended out; must be in the form "R, Album Title, Album Artist"
 	 * 		Q = stops the program execution
 	 * 
 	 */
