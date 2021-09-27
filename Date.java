@@ -106,8 +106,12 @@ public class Date implements Comparable<Date> {
 			return false;
 		}
 		
-		// If it is February, check for leap year validity
+		// If it is February, check for date validity
 		if (month == Calendar.FEBRUARY + 1) {
+			// The day value cannot exceed 29 in February
+			if (day > FEB_LEAP_YEAR) {
+				return false;
+			}
 			// If it is not a leap year and the day is 29, the date is invalid
 			if (!isLeapYear(year) && day == FEB_LEAP_YEAR) {
 				return false;
