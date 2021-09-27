@@ -82,12 +82,10 @@ public class Date implements Comparable<Date> {
 	 * @return True or False depending on whether the date is considered valid.
 	 * 
 	 */
-	public boolean isValid() {
-		// Create a calendar instance to get today's date parameters
-		Calendar calendar = Calendar.getInstance();
-		
+	public boolean isValid() {		
 		// Check if the date is after today
-		if (year > calendar.get(Calendar.YEAR) || month > calendar.get(Calendar.MONTH) + 1 || day > calendar.get(Calendar.DAY_OF_MONTH)) {
+		Date today = new Date();
+		if (today.compareTo(this) > 0) {
 			return false;
 		}
 		
