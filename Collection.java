@@ -64,31 +64,28 @@ public class Collection {
     }
 
     public boolean lendingOut(Album album) {    // set to not available
-        for (int i = 0; i < albums.length; i++) {
-            if (album.equals(albums[i])) {
-                album.setAvailability(false);
-                return true;
-            }
+        int index = find(album);
+        if (index > -1) {
+            albums[index].setAvailability(false);
+            return true;
         }
         return false;
     }
 
     public boolean returnAlbum(Album album) {   // set to available
-        for (int i = 0; i < albums.length; i++) {
-            if (album.equals(albums[i])) {
-                album.setAvailability(true);
-                return true;
-            }
+        int index = find(album);
+        if (index > -1) {
+            albums[index].setAvailability(true);
+            return true;
         }
         return false;
     }
 
     public void print() {   // display the list without specifying the order
-        System.out.println("numArrays: " + numAlbums);
         for (int i = 0; i < numAlbums; i++) {
             System.out.println(albums[i].toString());
         }
-        System.out.println("*End of list" + "\t\t numArrays: " + numAlbums);
+        System.out.println("*End of list");
     }
 
     public void printByReleaseDate() {

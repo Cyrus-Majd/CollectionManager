@@ -150,9 +150,9 @@ public class CollectionManager {
 		boolean success = collection.remove(removeAlbum);
 		
 		if (success) {
-			System.out.println(removeAlbum.toString() + " has been removed successfully.");
+			System.out.println(removeAlbum.toString() + " >> deleted.");
 		} else {
-			System.out.println(removeAlbum.toString() + " is not in the collection.");
+			System.out.println(removeAlbum.toString() + " >> is not in the collection.");
 		}
 	}
 	
@@ -175,9 +175,9 @@ public class CollectionManager {
 		boolean success = collection.lendingOut(lendAlbum);
 		
 		if (success) {
-			System.out.println(lendAlbum.toString() + " has been lended out successfully.");
+			System.out.println(lendAlbum.toString() + " >> lending out and set to not available.");
 		} else {
-			System.out.println(lendAlbum.toString() + " could not be lended out.");
+			System.out.println(lendAlbum.toString() + " >> could not be lended out.");
 		}
 	}
 	
@@ -200,9 +200,9 @@ public class CollectionManager {
 		boolean success = collection.returnAlbum(returnAlbum);
 		
 		if (success) {
-			System.out.println(returnAlbum.toString() + " has been returned successfully.");
+			System.out.println(returnAlbum.toString() + " >> returning and set to available.");
 		} else {
-			System.out.println(returnAlbum.toString() + " could not be returned.");
+			System.out.println(returnAlbum.toString() + " >> return cannot be completed.");
 		}
 	}
 	
@@ -224,7 +224,7 @@ public class CollectionManager {
 		Scanner input = new Scanner(System.in);
 		
 		// Print a line to indicate the start of the program
-		System.out.println("Collection manager has started.");
+		System.out.println("Collection manager starts running.");
 		
 		// While loop for receiving and executing commands
 		while (active) {
