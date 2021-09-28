@@ -1,13 +1,11 @@
-A,a,a,Country,8/6/2021
+A,a,a,pop,8/6/2021
 A,b,b,Country,8/6/2021
 A,c,c,Country,8/6/2021
 A,d,d,Country,8/6/2021
 A,e,e,Country,8/6/2021
 P
 D,e,e
+L,c,c
 P
-A,f,f,Country,8/6/2021
-A,g,g,Country,8/6/2021
-A,h,h,Country,8/6/2021
-P
+Z
 Q

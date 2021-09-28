@@ -66,7 +66,6 @@ public class Collection {
     public boolean lendingOut(Album album) {    // set to not available
         for (int i = 0; i < albums.length; i++) {
             if (album.equals(albums[i])) {
-                // idk how to do this because the isAvailable method is private.
                 album.setAvailability(false);
                 return true;
             }
@@ -78,8 +77,8 @@ public class Collection {
         for (int i = 0; i < albums.length; i++) {
             if (album.equals(albums[i])) {
                 album.setAvailability(true);
+                return true;
             }
-            return true;
         }
         return false;
     }

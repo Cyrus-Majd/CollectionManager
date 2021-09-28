@@ -23,6 +23,7 @@ public class Album {
 	 * @param artist the album artist
 	 * @param genre Genre enum. The album's genre
 	 * @param releaseDate Date object. The album's release date
+	 * @param isAvailable flag for determining whether or not an album is available.
 	 * 
 	 */
 	public Album(String title, String artist, Genre genre, Date releaseDate) {
@@ -30,7 +31,7 @@ public class Album {
 		this.artist = artist;
 		this.genre = genre;
 		this.releaseDate = releaseDate;
-		isAvailable = true;
+		this.isAvailable = true;
 	}
 	
 	/** Returns true or false depending on whether or not two albums have the same artist and title.
@@ -93,6 +94,6 @@ public class Album {
 	 * 
 	 * */
 	public void setAvailability(boolean availability) {
-		isAvailable = availability;
+		this.isAvailable = availability;
 	}
 }
