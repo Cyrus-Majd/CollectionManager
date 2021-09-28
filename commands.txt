@@ -1,8 +1,33 @@
-A,a,a,pop,8/6/2021
-A,d,d,Country,8/6/2021
-A,d,d,Country,8/6/2021
-L,d,d
-R,a,a
-R,a,d
-R,d,d
+p
+a
+pd
+pg
+l blah blah blah
+d
+r
+AA
+PP
+RR
+P
+PD
+PG
+A,Change,Anika,pop,7/23/2021
+A,Change,Anika,pop,7/23/2021
+A,Change,April March,pop,7/23/2021
+A,Spiral,Darkside,pop,7/1/2021
+A,Debussy:La Mer,Leonard Bernstein,classical,2/28/1995
+A,Debussy:La mer,Gary Bertini,classical,1/1/2006
+A,Heart-Shaped Scars,Dot Allison,pop,7/31/2021
+A,Tiranno,Kate Lindsey,classical,5/28/2020
+A,Complete Atlantic,Mose Allison,jazz,3/1/2021
+A,Never No Lament,Duke Ellington,jazz,4/1/2003
+A,Understanding,Roy Brooks,jazz,2/29/2008
+A,Change,April March,pop,7/23/2021
+D,Change,April March
+A,Change,April March,pop,7/23/2021
+A,Famous Friends,Chris Young,Country,8/6/2021
+A,The Grass Is Blue,Dolly Parton,country,10/26/1999
+A,The Essential Willie Nelson, Willie Nelson,country,4/1/2003
+D,Famous Friends,Chris Young
+P
 Q

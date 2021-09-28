@@ -82,6 +82,10 @@ public class Collection {
     }
 
     public void print() {   // display the list without specifying the order
+        if (numAlbums == 0) {
+            System.out.println("The collection is empty!");
+            return;
+        }
         for (int i = 0; i < numAlbums; i++) {
             System.out.println(albums[i].toString());
         }
@@ -89,11 +93,17 @@ public class Collection {
     }
 
     public void printByReleaseDate() {
-
+        if (numAlbums == 0) {
+            System.out.println("The collection is empty!");
+            return;
+        }
     }
 
     public void printByGenre() {
-
+        if (numAlbums == 0) {
+            System.out.println("The collection is empty!");
+            return;
+        }
     }
 
 // public class Collection {

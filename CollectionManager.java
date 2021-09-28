@@ -150,7 +150,7 @@ public class CollectionManager {
 		boolean success = collection.remove(removeAlbum);
 		
 		if (success) {
-			System.out.println(removeAlbum.toString() + " >> deleted.");
+			System.out.println(title + "::" + artist + " >> deleted.");
 		} else {
 			System.out.println(removeAlbum.toString() + " >> is not in the collection.");
 		}
