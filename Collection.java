@@ -132,12 +132,25 @@ public class Collection {
     }
 
     /** Prints all of the albums in the collection in order of release date.*/
-    public void printByReleaseDate() {
+    public void printByReleaseDate() {  // we want old to be at index 0 and new to be at the latest index.
         if (numAlbums == 0) {
             System.out.println("The collection is empty!");
             return;
         }
-
+        for (int j = 0; j < numAlbums; j++) {
+            for (int i = 0; i < numAlbums-1; i++) {
+                if (albums[i].getDate().compareTo(albums[i+1].getDate()) == -1) {   // 1 means that album at i is more recent. 0 means album at i+1 is more recent.
+                    Album tmp = albums[i];
+                    albums[i] = albums[i+1];
+                    albums[i+1] = tmp;
+                }
+            }
+        }
+        System.out.println("*Album collection by the release dates.");
+        for (int i = 0; i < numAlbums; i++) {
+            System.out.println(albums[i].toString());
+        }
+        System.out.println("*End of list");
     }
 
     /** Prints all of the albums in the collection in order of genre.*/
@@ -146,5 +159,11 @@ public class Collection {
             System.out.println("The collection is empty!");
             return;
         }
+        
+        System.out.println("*Album collection by genre.");
+        for (int i = 0; i < numAlbums; i++) {
+            System.out.println(albums[i].toString());
+        }
+        System.out.println("*End of list");
     }
 }

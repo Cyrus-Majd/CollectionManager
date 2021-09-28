@@ -96,4 +96,8 @@ public class Album {
 	public void setAvailability(boolean availability) {
 		this.isAvailable = availability;
 	}
+
+	public Date getDate() {
+		return releaseDate;
+	}
 }
