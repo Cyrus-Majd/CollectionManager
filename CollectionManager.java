@@ -101,12 +101,16 @@ public class CollectionManager {
 		switch(command.nextToken().toLowerCase()) {
 		case "pop":
 			genre = Genre.POP;
+			break;
 		case "country":
 			genre = Genre.COUNTRY;
+			break;
 		case "classical":
 			genre = Genre.CLASSICAL;
+			break;
 		case "jazz":
 			genre = Genre.JAZZ;
+			break;
 		default:
 			genre = Genre.UNKNOWN;
 		}
