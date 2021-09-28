@@ -80,7 +80,7 @@ public class CollectionManager {
 			}
 			break;
 		case "Q":
-			System.out.println("Exiting the collection manager.");
+			System.out.println("Collection Manager terminated.");
 			active = false;
 			break;
 		default:

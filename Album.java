@@ -97,7 +97,21 @@ public class Album {
 		this.isAvailable = availability;
 	}
 
+	/** Getter method to retrieve date.
+	 * 
+	 * 
+	 * 
+	 * */
 	public Date getDate() {
 		return releaseDate;
+	}
+
+	/** Getter method to retrieve the genre.
+	 * 
+	 * 
+	 * 
+	 * */
+	public Genre getGenre() {
+		return genre;
 	}
 }

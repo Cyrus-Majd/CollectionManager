@@ -159,10 +159,68 @@ public class Collection {
             System.out.println("The collection is empty!");
             return;
         }
-        
+
+        // IDEA: this is stupid but ez. list for each genre. find all in each genre. add lists. YOLO.
+
+        Album classicalList[] = new Album[numAlbums];
+        Album countryList[] = new Album[numAlbums];
+        Album jazzList[] = new Album[numAlbums];
+        Album popList[] = new Album[numAlbums];
+        Album unknownList[] = new Album[numAlbums];
+
+        int classicalIndex = 0;
+        int countryIndex = 0;
+        int jazzIndex = 0;
+        int popIndex = 0;
+        int unknownIndex = 0;
+
+        for (int i = 0; i < numAlbums; i++) {   // classical loop
+            switch(albums[i].getGenre().toString()) {
+                case "CLASSICAL":
+                    classicalList[classicalIndex] = albums[i];
+                    classicalIndex++;
+                    break;
+                case "COUNTRY":
+                    countryList[countryIndex] = albums[i];
+                    countryIndex++;
+                    break;
+                case "JAZZ":
+                    jazzList[jazzIndex] = albums[i];
+                    jazzIndex++;
+                    break;
+                case "POP":
+                    popList[popIndex] = albums[i];
+                    popIndex++;
+                    break;
+                case "UNKNOWN":
+                    unknownList[unknownIndex] = albums[i];
+                    unknownIndex++;
+                    break;
+            }
+        }
+
+        Album listByGenre[] = new Album[numAlbums];
+
+        for (int i = 0; i < classicalIndex; i++) {
+            listByGenre[i] = classicalList[i];
+        }
+        for (int i = 0; i < countryIndex; i++) {
+            listByGenre[classicalIndex + i] = countryList[i];
+        }
+        for (int i = 0; i < jazzIndex; i++) {
+            listByGenre[classicalIndex + countryIndex + i] = jazzList[i];
+        }
+        for (int i = 0; i < popIndex; i++) {
+            listByGenre[classicalIndex + countryIndex + jazzIndex + i] = popList[i];
+        }
+        for (int i = 0; i < unknownIndex; i++) {
+            listByGenre[classicalIndex + countryIndex + jazzIndex + popIndex + i] = unknownList[i];
+        }
+
+
         System.out.println("*Album collection by genre.");
         for (int i = 0; i < numAlbums; i++) {
-            System.out.println(albums[i].toString());
+            System.out.println(listByGenre[i].toString());
         }
         System.out.println("*End of list");
     }
