@@ -97,6 +97,11 @@ public class Album {
 		this.isAvailable = availability;
 	}
 
+	/** Returns the release date of the album.
+	 * 
+	 * @return The release date of the album as a Date object.
+	 * 
+	 */
 	public Date getDate() {
 		return releaseDate;
 	}
