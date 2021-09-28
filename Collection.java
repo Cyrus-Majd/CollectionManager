@@ -97,7 +97,7 @@ public class Collection {
             System.out.println("The collection is empty!");
             return;
         }
-        
+
     }
 
     public void printByGenre() {
@@ -106,3 +106,4 @@ public class Collection {
             return;
         }
     }
+}
