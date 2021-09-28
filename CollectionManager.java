@@ -84,7 +84,7 @@ public class CollectionManager {
 			active = false;
 			break;
 		default:
-			System.out.println("ERROR: Invalid Command!");
+			System.out.println("Invalid Command!");
 		}
 	}
 	
@@ -114,7 +114,7 @@ public class CollectionManager {
 		
 		// Check if the date is valid
 		if (!releaseDate.isValid()) {
-			System.out.println("ERROR: Date is invalid!");
+			System.out.println("Invalid Date!");
 			return;
 		}
 		
@@ -125,9 +125,9 @@ public class CollectionManager {
 		boolean success = collection.add(newAlbum);
 		
 		if (success) {
-			System.out.println(newAlbum.toString() + " has been added successfully.");
+			System.out.println(newAlbum.toString() + " >> added.");
 		} else {
-			System.out.println(newAlbum.toString() + " is already in the collection.");
+			System.out.println(newAlbum.toString() + " >> is already in the collection.");
 		}
 	}
 	
