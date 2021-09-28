@@ -228,7 +228,7 @@ public class CollectionManager {
 		Scanner input = new Scanner(System.in);
 		
 		// Print a line to indicate the start of the program
-		System.out.println("Collection manager starts running.");
+		System.out.println("Collection Manager starts running.");
 		
 		// While loop for receiving and executing commands
 		while (active) {

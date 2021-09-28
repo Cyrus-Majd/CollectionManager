@@ -124,6 +124,7 @@ public class Collection {
             System.out.println("The collection is empty!");
             return;
         }
+        System.out.println("*List of albums in the collection.");
         for (int i = 0; i < numAlbums; i++) {
             System.out.println(albums[i].toString());
         }
