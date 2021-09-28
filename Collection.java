@@ -36,6 +36,7 @@ public class Collection {
             }
             else if (numAlbums >= albums.length) {  // if this is true, it means we need to expand the array before we add more.
                 grow();
+                numAlbums++;
                 albums[numAlbums] = album;
                 numAlbums++;
                 return true;
@@ -66,21 +67,29 @@ public class Collection {
         for (int i = 0; i < albums.length; i++) {
             if (album.equals(albums[i])) {
                 // idk how to do this because the isAvailable method is private.
-                // albums[i].isAvailable = false;
+                album.setAvailability(false);
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     public boolean returnAlbum(Album album) {   // set to available
-        return true;
+        for (int i = 0; i < albums.length; i++) {
+            if (album.equals(albums[i])) {
+                album.setAvailability(true);
+            }
+            return true;
+        }
+        return false;
     }
 
     public void print() {   // display the list without specifying the order
+        System.out.println("numArrays: " + numAlbums);
         for (int i = 0; i < numAlbums; i++) {
             System.out.println(albums[i].toString());
         }
-        System.out.println("*End of list");
+        System.out.println("*End of list" + "\t\t numArrays: " + numAlbums);
     }
 
     public void printByReleaseDate() {
